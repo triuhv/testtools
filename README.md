@@ -4,7 +4,10 @@
 - curl
 - rclone  
   
- **Using it on Docker environment :**  
+**Link GitHub :**  
+https://github.com/triuhv/testtools.git  
+  
+**Using it on Docker environment :**  
 `docker run -it --name testtools triuhv/testtools:v1.0 /bin/sh -c "while true; do echo 'busybox running'; sleep 10;done"`
   
 `docker exec -it testtools bash`  
@@ -27,9 +30,9 @@ spec:
     command: ["/bin/bash"]  
     args: ["-c", "while true; do echo 'busybox running'; sleep 10;done"]  
 2. Run apply pod  
-`kubectl apply -f testtools.yaml  
+`kubectl apply -f testtools.yaml ` 
 3. Access to pob  
-`kubectl exec -it pod/testtools bash  
+`kubectl exec -it pod/testtools bash ` 
   
    root@2be2625c49a7:/# ping google.com   
   
@@ -38,12 +41,12 @@ spec:
 Username: developer  
 Password:  
   
-`oc project myproject  
-`oc new-app --docker-image=triuhv/testtools:v1.0 -l method=testtools    
+`oc project myproject`   
+`oc new-app --docker-image=triuhv/testtools:v1.0 -l method=testtools`    
   
 Node: Update deployment yaml by  
       \- command:  
           \- /bin/sh  
           \- '-c'  
           \- while true; do echo 'busybox running'; sleep 10;done  
- 
+
